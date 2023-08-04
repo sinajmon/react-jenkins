@@ -1,6 +1,6 @@
 pipeline {
     agent any
-
+    tools {nodejs "nodejs"}
     environment {
         AWS_ACCESS_KEY_ID = 'AKIATSMVQX4KYLUBQLHB'
         AWS_SECRET_ACCESS_KEY = '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'
