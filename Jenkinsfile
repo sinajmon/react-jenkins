@@ -4,7 +4,7 @@ pipeline {
     environment {
         AWS_ACCESS_KEY_ID = credentials('aws-access-key-id')
         AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
-        AWS_REGION = credentials('aws-region') // Replace with your desired AWS region
+        AWS_REGION = 'us-east-1' // Replace with your desired AWS region
         S3_BUCKET_NAME = 'jenkins-s3-demo' // Replace with your S3 bucket name
     }
 
