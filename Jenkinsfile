@@ -1,31 +1,15 @@
 pipeline {
     agent any
-    tools {nodejs "nodejs"}
-    environment {
-        AWS_ACCESS_KEY_ID = 'AKIATSMVQX4KYLUBQLHB'
-        AWS_SECRET_ACCESS_KEY = '6lsiUYIb2NzZFKwGprFBXrSqzpBrPcGz3CCknZpC'
-        AWS_REGION = 'us-east-1' // Replace with your desired AWS region
-        S3_BUCKET_NAME = 'jenkins-s3-demo' // Replace with your S3 bucket name
-    }
-
     stages {
         stage('Install dependencies') {
             steps {
-                sh 'npm install'
+                echo "sh 'npm install'"
             }
         }
 
         stage('Build') {
             steps {
-                sh 'npm run build'
-            }
-        }
-
-        stage('Deploy to S3') {
-            steps {
-                withAWS(region: env.AWS_REGION, credentials: 'aws-credentials') {
-                    sh "aws s3 sync build/ s3://${env.S3_BUCKET_NAME}/ --delete"
-                }
+                echo "sh 'npm run build'"                
             }
         }
     }
