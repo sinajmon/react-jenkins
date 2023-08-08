@@ -3,13 +3,15 @@ pipeline {
     stages {
         stage('Install dependencies') {
             steps {
-                echo "sh 'npm install'"
+                echo "installing"
+              //  echo "sh 'npm install'"
             }
         }
 
         stage('Build') {
             steps {
-                echo "sh 'npm run build'"                
+                echo "building"
+               // echo "sh 'npm run build'"                
             }
         }
     }
